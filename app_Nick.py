@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import plotly.express as px
 
 st.title("My First Dashboard")
 
@@ -74,8 +75,8 @@ else:
                                    df['day_of_week'].unique().tolist())                           
 
     sample = {
-        'id': id_val
-        'yesterday': yesterday
+        'id': id_val,
+        'yesterday': yesterday,
         'day_of_week': day_of_week
         }
     
