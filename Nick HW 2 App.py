@@ -69,7 +69,7 @@ else:
     st.text("Choose Options to the Side to Explore the Model")
     model = load_model()
     
-    gender = st.sidebar.selectbox("Choose Sex", 
+    gender = st.sidebar.radio("Choose Sex", 
                                   df['sex'].unique().tolist())
     age = st.sidebar.selectbox("What is the Insured's Age",
                                   df['age'].unique().tolist())
@@ -77,17 +77,24 @@ else:
                                   df['region'].unique().tolist())
     children = st.sidebar.selectbox("How Many Kids Does the Insured Have?", 
                                   df['children'].unique().tolist())
+    smoker = st.sidebar.radio("Is the Insured a Smoker?",
+                           df['age'].unique().list())
+    bmi = st.sidebar.select_slider("Insured's BMI",
+                                   df['bmi'].unique().tolist())
+
     
     sample = {
     'sex': gender,
     'age': age,
     'region': region,
-    'children': children
+    'children': children,
+    'smoker': smoker,
+    'bmi': bmi
     }
 
     sample = pd.DataFrame(sample, index = [0])
     prediction = model.predict(sample)[0]
     
-    st.title(f"Predicted Attendance: {int(prediction)}")
+    st.title(f"Predicted Insurance Charges: {int(prediction)}")
 
 
