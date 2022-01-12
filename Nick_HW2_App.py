@@ -13,7 +13,7 @@ import plotly.express as px
 
 st.title("Data Exploration of American Health Insurance Policies")
 
-url = r"C:\Users\nicholas.assad\dat-11-15\Homework\Unit2\data\insurance_premiums.csv"
+url = r"C:\Users\nicholas.assad\Downloads\insurance_premiums.csv"
 
 num_rows = st.sidebar.number_input('Select Number of Rows to Load', 
                                    min_value = 50, 
