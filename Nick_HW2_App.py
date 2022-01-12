@@ -70,7 +70,7 @@ else:
     model = load_model()
     
     gender = st.sidebar.radio("Choose Sex", 
-                                  df['sex'].unique().tolist())
+                                  df['sex'].unique())
     age = st.sidebar.selectbox("What is the Insured's Age",
                                   df['age'].unique().tolist())
     region = st.sidebar.selectbox("Region", 
@@ -78,9 +78,9 @@ else:
     children = st.sidebar.selectbox("How Many Kids Does the Insured Have?", 
                                   df['children'].unique().tolist())
     smoker = st.sidebar.radio("Is the Insured a Smoker?",
-                           df['age'].unique().list())
+                                  df['smoker'].unique())
     bmi = st.sidebar.select_slider("Insured's BMI",
-                                   df['bmi'].unique().tolist())
+                                  df['bmi'].unique().tolist())
  
     sample = {
     'sex': gender,
