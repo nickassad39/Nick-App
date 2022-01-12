@@ -64,5 +64,30 @@ if section == 'Data Explorer':
         st.plotly_chart(fig)
     
     st.write(df)
+    
+else:
+    st.text("Choose Options to the Side to Explore the Model")
+    model = load_model()
+    
+    gender = st.sidebar.selectbox("Choose Sex", 
+                                  df['sex'].unique().tolist())
+    age = st.sidebar.selectbox("What is the Insured's Age",
+                                  df['age'].unique().tolist())
+    region = st.sidebar.selectbox("Region", 
+                                  df['region'].unique().tolist())
+    children = st.sidebar.selectbox("How Many Kids Does the Insured Have?", 
+                                  df['children'].unique().tolist())
+    
+    sample = {
+    'sex': gender,
+    'age': age,
+    'region': region,
+    'children': children
+    }
+
+    sample = pd.DataFrame(sample, index = [0])
+    prediction = model.predict(sample)[0]
+    
+    st.title(f"Predicted Attendance: {int(prediction)}")
 
 
