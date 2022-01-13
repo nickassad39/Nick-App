@@ -13,7 +13,7 @@ import plotly.express as px
 
 st.title("Data Exploration of American Health Insurance Policies")
 
-url = r"https://github.com/JonathanBechtel/dat-11-15/blob/main/Homework/Unit2/data/insurance_premiums.csv"
+url = r"https://raw.githubusercontent.com/JonathanBechtel/dat-11-15/main/Homework/Unit2/data/insurance_premiums.csv"
 
 num_rows = st.sidebar.number_input('Select Number of Rows to Load', 
                                    min_value = 50, 
@@ -70,7 +70,7 @@ else:
     model = load_model()
     
     gender = st.sidebar.radio("Choose Sex", 
-                                  df['sex'].unique())
+                                  df['sex'].unique().tolist())
     age = st.sidebar.selectbox("What is the Insured's Age",
                                   df['age'].unique().tolist())
     region = st.sidebar.selectbox("Region", 
@@ -78,7 +78,7 @@ else:
     children = st.sidebar.selectbox("How Many Kids Does the Insured Have?", 
                                   df['children'].unique().tolist())
     smoker = st.sidebar.radio("Is the Insured a Smoker?",
-                                  df['smoker'].unique())
+                                  df['smoker'].unique().tolist())
     bmi = st.sidebar.select_slider("Insured's BMI",
                                   df['bmi'].unique().tolist())
  
