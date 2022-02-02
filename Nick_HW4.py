@@ -72,9 +72,7 @@ else:
     ounces = st.sidebar.radio("Choose Ounces", 
                                   df['ounces'].unique().tolist())
     state = st.sidebar.selectbox("What State is the beer brewed in?",
-                                  df['state'].unique().tolist())
-    city = st.sidebar.selectbox("City", 
-                                  df['city'].unique().tolist())    
+                                  df['state'].unique().tolist()) 
     style = st.sidebar.selectbox("What style is the beer?", 
                                   df['style'].unique().tolist())
     brewery = st.sidebar.radio("What brewery was t?",
@@ -83,7 +81,6 @@ else:
     sample = {
     'ounces': ounces,
     'state': state,
-    'city': city,
     'style': style,
     'brew_name': brewery,
     }
