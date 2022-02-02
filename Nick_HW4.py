@@ -13,7 +13,7 @@ import plotly.express as px
 
 st.title("Data Exploration of Craft Beers in the United States")
 
-df = pd.read_csv(r"C:\Users\nicholas.assad\OneDrive - Accenture\Desktop\beers.csv")
+url = r"https://github.com/nickassad39/Nick-App/blob/main/beers.csv"
 
 num_rows = st.sidebar.number_input('Select Number of Rows to Load', 
                                    min_value = 50, 
@@ -25,7 +25,7 @@ print(section)
 
 @st.cache
 def load_data(num_rows):
-    df = pd.read_csv(r"C:\Users\nicholas.assad\OneDrive - Accenture\Desktop\beers.csv", nrows = num_rows)
+    df = pd.read_csv(url, nrows = num_rows)
     return df
 
 @st.cache
