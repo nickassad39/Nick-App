@@ -13,7 +13,7 @@ import plotly.express as px
 
 st.title("Data Exploration of Craft Beers in the United States")
 
-url = r"https://github.com/nickassad39/Nick-App/blob/main/beers.csv"
+url = r"https://raw.githubusercontent.com/nickassad39/Nick-App/main/beers.csv"
 
 num_rows = st.sidebar.number_input('Select Number of Rows to Load', 
                                    min_value = 50, 
